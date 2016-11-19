@@ -1,0 +1,49 @@
+<div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="{{ site.baseurl }}">
+          <p class="lead">{{ site.title }}</p>
+        </a>
+      </h1>
+
+      <h4>Author</h4>
+      <p>
+        Vladimir Komarov (<a href="https://twitter.com/VrKomarov">Twitter</a></small>)
+      </p>
+
+      <h4>Recent posts</h4>
+
+      <ul>
+        {% for post in site.posts limit:10 %}
+          <li>
+            <small>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </small>
+          </li>
+        {% endfor %}
+      </ul>     
+
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+
+      {% comment %}
+        The code below dynamically generates a sidebar nav of pages with
+        `layout: page` in the front-matter. See readme for usage.
+      {% endcomment %}
+
+      {% assign pages_list = site.pages %}
+      {% for node in pages_list %}
+        {% if node.title != null %}
+          {% if node.layout == "page" %}
+            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+    </nav>
+
+  </div>
+</div>

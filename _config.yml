@@ -1,0 +1,29 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            VrKomarov
+tagline:          'The personal website of Vladimir Komarov'
+description:      'The personal website of Vladimir Komarov'
+url:              https://vrkomarov.github.io
+baseurl:          /
+
+author:
+  name:           'Vladimir Komarov'
+  url:            https://twitter.com/VrKomarov
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/VrKomarov/vrkomarov.github.io
+
+gems: [jekyll-paginate]
+paginate: 5
+paginate_path: "page:num"
